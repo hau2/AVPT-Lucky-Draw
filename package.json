@@ -1,7 +1,7 @@
 {
   "name": "random-name-picker",
   "version": "2.1.0",
-  "description": "Simple HTML5 random name picker for picking lucky draw winner using Web Animations and AudioContext API.",
+  "description": "Lucky Draw app for AVPT Year End Party.",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.conf.js",

@@ -1,7 +1,7 @@
 {
   "name": "AVPT Lucky Draw",
   "short_name": "AVPT Lucky Draw",
-  "description": "Simple HTML5 random name picker for picking lucky draw winner using Web Animations API",
+  "description": "Lucky Draw app for AVPT Year End Party.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f20c49",
