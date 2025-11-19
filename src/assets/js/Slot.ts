@@ -1,4 +1,6 @@
 interface SlotConfigurations {
+  /** User configuration for name list to draw from */
+  nameList: string[];
   /** User configuration for maximum item inside a reel */
   maxReelItems?: number;
   /** User configuration for whether winner should be removed from name list */
@@ -58,10 +60,11 @@ export default class Slot {
       reelContainerSelector,
       onSpinStart,
       onSpinEnd,
-      onNameListChanged
+      onNameListChanged,
+      nameList
     }: SlotConfigurations
   ) {
-    this.nameList = [];
+    this.nameList = nameList;
     this.havePreviousWinner = false;
     this.reelContainer = document.querySelector(reelContainerSelector);
     this.maxReelItems = maxReelItems;
@@ -81,13 +84,20 @@ export default class Slot {
         { transform: `translateY(-${(this.maxReelItems - 1) * (7.5 * 16)}px)`, filter: 'blur(0)' }
       ],
       {
-        duration: this.maxReelItems * 200, // 100ms for 1 item
+        duration: this.getRandomSpinDuration(),
         easing: 'ease-in-out',
         iterations: 1
       }
     );
 
     this.reelAnimation?.cancel();
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  private getRandomSpinDuration(): number {
+    const min = 12000; // 12 giây
+    const max = 20000; // 20 giây
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   /**

@@ -102,7 +102,10 @@ import SoundEffects from '@js/SoundEffects';
     maxReelItems: MAX_REEL_ITEMS,
     onSpinStart,
     onSpinEnd,
-    onNameListChanged: stopWinningAnimation
+    onNameListChanged: stopWinningAnimation,
+    nameList: [
+      ...Array.from({ length: 400 }, (_, i) => `Hari Le ${i + 1}`)
+    ]
   });
 
   /** To open the setting page */
