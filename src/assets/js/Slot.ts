@@ -96,7 +96,7 @@ export default class Slot {
   // eslint-disable-next-line class-methods-use-this
   private getRandomSpinDuration(): number {
     const min = 12000; // 12 giây
-    const max = 20000; // 20 giây
+    const max = 17000; // 17 giây
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
