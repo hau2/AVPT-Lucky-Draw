@@ -82,11 +82,13 @@ import SoundEffects from '@js/SoundEffects';
     stopWinningAnimation();
     drawButton.disabled = true;
     settingsButton.disabled = true;
-    soundEffects.spin((MAX_REEL_ITEMS - 1) / 10);
+    soundEffects.startSpinSound();
   };
 
   /**  Functions to be trigger after spinning */
   const onSpinEnd = async () => {
+    soundEffects.stopSpinSound();
+
     confettiAnimation();
     sunburstSvg.style.display = 'block';
     await soundEffects.win();
