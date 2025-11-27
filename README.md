@@ -17,7 +17,7 @@
 </p>
 
 ## Live Demo
-Demo is available at [https://pinkylam.me/playground/random-name-picker](https://pinkylam.me/playground/random-name-picker)
+Demo is available at [https://avpt-lucky-draw.vercel.app/](https://avpt-lucky-draw.vercel.app/)
 
 ### Technology Stack
 * Pug
