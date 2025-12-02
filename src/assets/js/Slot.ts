@@ -84,7 +84,7 @@ export default class Slot {
         { transform: `translateY(-${(this.maxReelItems - 1) * (7.5 * 16)}px)`, filter: 'blur(0)' }
       ],
       {
-        duration: this.getRandomSpinDuration(),
+        duration: this.maxReelItems * 200,
         easing: 'ease-in-out',
         iterations: 1
       }
@@ -94,11 +94,11 @@ export default class Slot {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  private getRandomSpinDuration(): number {
-    const min = 12000; // 12 giây
-    const max = 17000; // 17 giây
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  // private getRandomSpinDuration(): number {
+  //   const min = 12000; // 12 giây
+  //   const max = 17000; // 17 giây
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // }
 
   /**
    * Setter for name list
