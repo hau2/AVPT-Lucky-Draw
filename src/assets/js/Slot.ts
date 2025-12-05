@@ -84,8 +84,8 @@ export default class Slot {
         { transform: `translateY(-${(this.maxReelItems - 1) * (7.5 * 16)}px)`, filter: 'blur(0)' }
       ],
       {
-        duration: this.maxReelItems * 200,
-        easing: 'ease-in-out',
+        duration: this.maxReelItems * 150,
+        easing: 'cubic-bezier(0.05, 0.55, 0.1, 1)',
         iterations: 1
       }
     );
