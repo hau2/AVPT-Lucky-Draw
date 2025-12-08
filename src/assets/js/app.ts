@@ -732,3 +732,10 @@ import SoundEffects from '@js/SoundEffects';
   // Click handler for "Discard and close" button for setting page
   settingsCloseButton.addEventListener('click', onSettingsClose);
 })();
+
+// Load sound effects
+const soundEffects = new SoundEffects();
+Promise.all([
+  soundEffects.loadSpinAudio(),
+  soundEffects.loadWinAudio()
+]).catch(console.error);

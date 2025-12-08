@@ -13,7 +13,7 @@ export default class SoundEffects {
 
   private isMuted = false;
 
-  private SPIN_SOUND_URL = 'https://hau2.github.io/sounds/nhac-xo-so.mp3';
+  private SPIN_SOUND_URL = 'https://hau2.github.io/sounds/nhac-xo-so-v3.mp3';
 
   private WIN_SOUND_URL = 'https://hau2.github.io/sounds/yee.mp3';
 
@@ -41,7 +41,7 @@ export default class SoundEffects {
   }
 
   /** Load spin sound */
-  private async loadSpinAudio() {
+  public async loadSpinAudio() {
     if (!this.audioContext) return;
     if (this.buffer) return;
 
@@ -51,7 +51,7 @@ export default class SoundEffects {
   }
 
   /** Load win sound */
-  private async loadWinAudio() {
+  public async loadWinAudio() {
     if (!this.audioContext) return;
     if (this.winBuffer) return;
 
@@ -78,8 +78,7 @@ export default class SoundEffects {
     this.source.connect(this.gainNode);
     this.source.start(0);
 
-    this.gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
-    this.gainNode.gain.linearRampToValueAtTime(1, this.audioContext.currentTime + 0.3);
+    this.gainNode.gain.setValueAtTime(1, this.audioContext.currentTime);
   }
 
   /** Fade-out spin */
