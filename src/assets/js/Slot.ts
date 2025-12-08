@@ -239,7 +239,7 @@ export default class Slot {
   /**
    * Clear displayed winner name and reset reel -> the name will be empty
    */
-  public clearWinner() {
+  public clearWinner(callBack: (() => void) | null = null) {
     const { reelContainer } = this;
     if (!reelContainer) {
       return;
@@ -249,5 +249,9 @@ export default class Slot {
       .forEach((element) => element.remove());
 
     this.havePreviousWinner = false;
+
+    if (callBack) {
+      callBack();
+    }
   }
 }

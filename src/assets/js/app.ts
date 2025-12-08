@@ -738,7 +738,9 @@ import SoundEffects from '@js/SoundEffects';
 
   // Click handler for "Clear" button
   clearButton.addEventListener('click', () => {
-    slot.clearWinner();
+    slot.clearWinner(() => {
+      stopWinningAnimation();
+    });
   });
 })();
 
