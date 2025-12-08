@@ -40,6 +40,9 @@ import SoundEffects from '@js/SoundEffects';
   const enableSoundCheckbox = document.getElementById(
     'enable-sound'
   ) as HTMLInputElement | null;
+  const clearButton = document.getElementById(
+    'clear-button'
+  ) as HTMLButtonElement | null;
 
   // Graceful exit if necessary elements are not found
   if (
@@ -56,6 +59,7 @@ import SoundEffects from '@js/SoundEffects';
       && nameListTextArea
       && removeNameFromListCheckbox
       && enableSoundCheckbox
+      && clearButton
     )
   ) {
     console.error('One or more Element ID is invalid. This is possibly a bug.');
@@ -731,6 +735,11 @@ import SoundEffects from '@js/SoundEffects';
 
   // Click handler for "Discard and close" button for setting page
   settingsCloseButton.addEventListener('click', onSettingsClose);
+
+  // Click handler for "Clear" button
+  clearButton.addEventListener('click', () => {
+    slot.clearWinner();
+  });
 })();
 
 // Load sound effects

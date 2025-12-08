@@ -33,6 +33,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+  display: flex;
+  align-items: center;
 
   // Fixing the notch issue on iOS when using "viewport-fit=cover"
   --safe-area-inset-right: 0px;

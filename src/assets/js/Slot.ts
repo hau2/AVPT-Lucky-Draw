@@ -235,4 +235,19 @@ export default class Slot {
     }
     return true;
   }
+
+  /**
+   * Clear displayed winner name and reset reel -> the name will be empty
+   */
+  public clearWinner() {
+    const { reelContainer } = this;
+    if (!reelContainer) {
+      return;
+    }
+
+    Array.from(reelContainer.children)
+      .forEach((element) => element.remove());
+
+    this.havePreviousWinner = false;
+  }
 }

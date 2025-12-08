@@ -2,6 +2,9 @@ include ../mixins/icons
 
 .main
   .control-group
+    button#clear-button.icon-button.icon-button--small(
+      style="font-size:1.2rem; color:#d4442e; background-color:white; border-radius:8px; padding:8px 16px;"
+    ) Clear winner name
     button#fullscreen-button.icon-button.icon-button--small
       +svg-icon.red.big(svg-icon-name='fullscreen')
     button#settings-button.icon-button.icon-button--small
@@ -23,7 +26,7 @@ include ../mixins/icons
       #sunburst.sunburst
         img(src="~@images/sunburst.svg" alt="sunburst")
 
-    button#draw-button.solid-button Draw
+      button#draw-button.solid-button Draw
 
   #settings.settings
     #settings-panel.settings__panel
